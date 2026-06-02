@@ -7,6 +7,7 @@ export type ProcessStep = {
 export type Szenario = {
   title: string;
   story: string;
+  image?: string;
 };
 
 export type FaqItem = {
@@ -25,6 +26,7 @@ export type Paket = {
   muted: string[];
   featured: boolean;
   tag: string | null;
+  heroImage?: string;
   longDesc?: string;
   processSteps?: ProcessStep[];
   forWhom?: string[];
@@ -58,6 +60,7 @@ export const pakete: Paket[] = [
     desc: 'Kein Anruf geht verloren. Ihr KI-Assistent ist rund um die Uhr erreichbar.',
     price: '390 €',
     each: 'einmalig · 49 €/Monat · zzgl. MwSt.',
+    heroImage: 'https://picsum.photos/seed/phone-reception-office/1400/520',
     features: [
       '24/7 erreichbar',
       'Nimmt Anliegen vollständig auf',
@@ -107,6 +110,7 @@ Der Assistent ist in unter einer Woche eingerichtet, klingt natürlich, nicht ro
     szenario: {
       title: 'Frau Weber ruft um 22:47 Uhr an.',
       story: 'Frau Weber hat Zahnschmerzen und ruft Ihre Praxis an. Statt der Mailbox meldet sich eine freundliche Stimme, nimmt ihr Anliegen auf und fragt, ob es dringend ist. Um 8:03 Uhr am nächsten Morgen finden Sie in Ihrem Postfach: Name, Telefonnummer, Schmerzlokalisation, Dringlichkeitsstufe — bereit für den Rückruf. Kein Anruf verloren, keine Notiz auf einem Zettel.',
+      image: 'https://picsum.photos/seed/night-phone-call/480/320',
     },
     faq: [
       {
@@ -142,6 +146,7 @@ Der Assistent ist in unter einer Woche eingerichtet, klingt natürlich, nicht ro
     desc: 'Für Büros, die ihre Wiederholungsarbeit endlich loswerden wollen.',
     price: 'ab 2.500 €',
     each: 'einmalig · ab 49 €/Monat · zzgl. MwSt.',
+    heroImage: 'https://picsum.photos/seed/workflow-laptop-desk/1400/520',
     features: [
       'Prozessanalyse zu Beginn',
       'Individuelle n8n-Workflows',
@@ -191,6 +196,7 @@ Wir beginnen mit einer Prozessanalyse: Was läuft heute manuell? Wo entsteht Rei
     szenario: {
       title: 'Eine Schadenmeldung. Kein manueller Aufwand.',
       story: 'Ein Kunde füllt das Schadensformular auf Ihrer Website aus. Automatisch wird ein Ticket erstellt, die Schadensnummer vergeben, der Kunde per E-Mail bestätigt, der zuständige Sachbearbeiter benachrichtigt und der Eintrag ins CRM gesetzt. Was früher 15 Minuten Copy-Paste bedeutete, passiert in unter drei Sekunden — ohne dass jemand am Rechner sitzt.',
+      image: 'https://picsum.photos/seed/automation-office/480/320',
     },
     faq: [
       {

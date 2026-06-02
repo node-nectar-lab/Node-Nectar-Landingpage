@@ -34,4 +34,18 @@ describe('pakete-data', () => {
       expect(p.faq!.length).toBeGreaterThanOrEqual(5);
     }
   });
+
+  it('slugged packages have heroImage defined', () => {
+    for (const slug of getSlugs()) {
+      const p = getPaketBySlug(slug)!;
+      expect(p.heroImage).toBeTruthy();
+    }
+  });
+
+  it('slugged packages szenario has image defined', () => {
+    for (const slug of getSlugs()) {
+      const p = getPaketBySlug(slug)!;
+      expect(p.szenario?.image).toBeTruthy();
+    }
+  });
 });
