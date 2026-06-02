@@ -106,9 +106,9 @@ Der Assistent ist in unter einer Woche eingerichtet, klingt natürlich, nicht ro
     forWhomIntro: 'Überall dort, wo Anrufe die Brücke zum Kunden sind — und jeder verpasste Anruf ein verpasster Auftrag.',
     forWhom: [
       { label: 'Zahnarztpraxen', desc: 'Anrufe nach Praxisschluss automatisch entgegennehmen und Rückrufbedarf priorisieren.' },
-      { label: 'Physiotherapie', desc: 'Terminanfragen und Absagen rund um die Uhr strukturiert erfassen, ohne Unterbrechung.' },
+      { label: 'Hausverwaltung', desc: 'Mieteranfragen und Störungsmeldungen rund um die Uhr strukturiert erfassen, ohne Unterbrechung.' },
       { label: 'Handwerksbetriebe', desc: 'Kundenanfragen und Kostenvoranschläge auch auf der Baustelle nicht mehr verpassen.' },
-      { label: 'Friseursalons', desc: 'Buchungsanfragen und Terminwünsche automatisch entgegennehmen und weiterleiten.' },
+      { label: 'Hausmeister Services', desc: 'Auftragsanfragen und Störungsmeldungen automatisch entgegennehmen und weiterleiten.' },
       { label: 'Beratungsbüros', desc: 'Erstanfragen qualifizieren und Kontaktdaten strukturiert erfassen — vor dem ersten Gespräch.' },
       { label: 'Fahrschulen', desc: 'Rückfragen zu Terminen, Prüfungen und Kursen automatisch beantworten.' },
       { label: 'Tierarztpraxen', desc: 'Notfallmeldungen sofort erkennen und priorisieren, Routineanfragen selbstständig bearbeiten.' },
