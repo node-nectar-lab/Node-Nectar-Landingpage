@@ -116,8 +116,8 @@ Der Assistent ist in unter einer Woche eingerichtet, klingt natürlich, nicht ro
     ],
     szenario: {
       title: 'Herr Schulz ruft an, während Sie auf dem Gerüst stehen.',
-      story: 'Es ist 14:23 Uhr, Sie sind mitten in der Fassadenarbeit. Herr Schulz ruft an — sein Dach ist undicht, er braucht dringend jemanden. Statt der Mailbox meldet sich eine freundliche Stimme, fragt nach dem Problem, der Adresse und der Dringlichkeit. Um 17:10 Uhr finden Sie in Ihrem Postfach: Name, Adresse, Schadensbeschreibung, Dringlichkeitsstufe — alles bereit für den Rückruf. Kein Auftrag verloren, keine Notiz auf einem Zettel.',
-      image: 'https://images.unsplash.com/photo-1758876734777-dcc6981f3671?w=480&h=320&fit=crop&auto=format',
+      story: 'Es ist 14:23 Uhr, Sie sind mitten in der Dacharbeit. Herr Schulz ruft an — sein Dach ist undicht, er braucht dringend jemanden. Statt der Mailbox meldet sich eine freundliche Stimme, fragt nach dem Problem, der Adresse und der Dringlichkeit. Um 17:10 Uhr finden Sie in Ihrem Postfach: Name, Adresse, Schadensbeschreibung, Dringlichkeitsstufe — alles bereit für den Rückruf. Kein Auftrag verloren, keine Notiz auf einem Zettel.',
+      image: 'https://images.unsplash.com/photo-1635424824849-1b09bdcc55b1?w=480&h=320&fit=crop&auto=format',
     },
     faq: [
       {
