@@ -115,9 +115,9 @@ Der Assistent ist in unter einer Woche eingerichtet, klingt natürlich, nicht ro
       { label: 'Steuerberater', desc: 'Mandantenanliegen geordnet erfassen — ohne Unterbrechungen im laufenden Arbeitsbetrieb.' },
     ],
     szenario: {
-      title: 'Frau Weber ruft um 22:47 Uhr an.',
-      story: 'Frau Weber hat Zahnschmerzen und ruft Ihre Praxis an. Statt der Mailbox meldet sich eine freundliche Stimme, nimmt ihr Anliegen auf und fragt, ob es dringend ist. Um 8:03 Uhr am nächsten Morgen finden Sie in Ihrem Postfach: Name, Telefonnummer, Schmerzlokalisation, Dringlichkeitsstufe — bereit für den Rückruf. Kein Anruf verloren, keine Notiz auf einem Zettel.',
-      image: 'https://picsum.photos/seed/night-phone-call/480/320',
+      title: 'Herr Schulz ruft an, während Sie auf dem Gerüst stehen.',
+      story: 'Es ist 14:23 Uhr, Sie sind mitten in der Fassadenarbeit. Herr Schulz ruft an — sein Dach ist undicht, er braucht dringend jemanden. Statt der Mailbox meldet sich eine freundliche Stimme, fragt nach dem Problem, der Adresse und der Dringlichkeit. Um 17:10 Uhr finden Sie in Ihrem Postfach: Name, Adresse, Schadensbeschreibung, Dringlichkeitsstufe — alles bereit für den Rückruf. Kein Auftrag verloren, keine Notiz auf einem Zettel.',
+      image: 'https://images.unsplash.com/photo-1758876734777-dcc6981f3671?w=480&h=320&fit=crop&auto=format',
     },
     faq: [
       {
