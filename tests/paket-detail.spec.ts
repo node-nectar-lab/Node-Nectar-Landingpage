@@ -36,4 +36,24 @@ test.describe('Paket Detail Pages', () => {
     const breadcrumb = page.locator('.pd-breadcrumb a');
     await expect(breadcrumb).toHaveAttribute('href', '/#pakete');
   });
+
+  test('Hero has background image', async ({ page }) => {
+    await page.goto('/pakete/digitale-rezeption');
+    const heroBg = page.locator('.pd-hero-bg');
+    await expect(heroBg).toBeVisible();
+    const src = await heroBg.getAttribute('src');
+    expect(src).toContain('picsum.photos');
+  });
+
+  test('Process shows timeline circles', async ({ page }) => {
+    await page.goto('/pakete/digitale-rezeption');
+    const circles = page.locator('.pd-step-circle');
+    await expect(circles).toHaveCount(4);
+  });
+
+  test('Szenario has side image', async ({ page }) => {
+    await page.goto('/pakete/digitale-rezeption');
+    const img = page.locator('.pd-szenario-img img');
+    await expect(img).toBeVisible();
+  });
 });
