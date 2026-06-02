@@ -43,7 +43,7 @@ export default async function PaketDetailPage({ params }: Props) {
         <PaketHero paket={paket} />
         {paket.longDesc && <PaketWasIstEs longDesc={paket.longDesc} />}
         {paket.processSteps && <PaketProcess steps={paket.processSteps} />}
-        {paket.forWhom && <PaketFuerWen forWhom={paket.forWhom} />}
+        {paket.forWhom && <PaketFuerWen forWhom={paket.forWhom} forWhomIntro={paket.forWhomIntro} />}
         {paket.szenario && <PaketSzenario szenario={paket.szenario} />}
         {paket.faq && <PaketFAQ faq={paket.faq} />}
         <PaketPreisCTA paket={paket} />

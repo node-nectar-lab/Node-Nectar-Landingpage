@@ -1,15 +1,26 @@
-type Props = { forWhom: string[] };
+import type { ForWhomItem } from '@/lib/pakete-data';
 
-export default function PaketFuerWen({ forWhom }: Props) {
+type Props = {
+  forWhom: ForWhomItem[];
+  forWhomIntro?: string;
+};
+
+export default function PaketFuerWen({ forWhom, forWhomIntro }: Props) {
   return (
-    <section className="pd-fuerwen">
+    <section className="pd-fuerwen" aria-labelledby="pd-fuerwen-heading">
       <div className="container">
-        <h2>Wer profitiert davon?</h2>
-        <div className="pd-fuerwen-pills">
-          {forWhom.map((item) => (
-            <span key={item} className="pd-pill">{item}</span>
-          ))}
+        <div className="pd-fuerwen-head">
+          <h2 id="pd-fuerwen-heading">Wer profitiert davon?</h2>
+          {forWhomIntro && <p className="pd-fuerwen-intro">{forWhomIntro}</p>}
         </div>
+        <ul className="pd-fuerwen-grid" role="list">
+          {forWhom.map((item) => (
+            <li key={item.label} className="pd-fuerwen-card">
+              <span className="pd-fuerwen-card-label">{item.label}</span>
+              <p className="pd-fuerwen-card-desc">{item.desc}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

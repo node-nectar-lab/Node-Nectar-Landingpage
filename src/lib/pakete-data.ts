@@ -15,6 +15,11 @@ export type FaqItem = {
   a: string;
 };
 
+export type ForWhomItem = {
+  label: string;
+  desc: string;
+};
+
 export type Paket = {
   slug: string | null;
   spur: string;
@@ -29,7 +34,8 @@ export type Paket = {
   heroImage?: string;
   longDesc?: string;
   processSteps?: ProcessStep[];
-  forWhom?: string[];
+  forWhom?: ForWhomItem[];
+  forWhomIntro?: string;
   szenario?: Szenario;
   faq?: FaqItem[];
 };
@@ -97,15 +103,16 @@ Der Assistent ist in unter einer Woche eingerichtet, klingt natürlich, nicht ro
         body: 'Ihre Rufnummer wird auf den Assistenten weitergeleitet. Jede Zusammenfassung landet per E-Mail bei Ihnen. Wir monitoren die ersten Wochen aktiv.',
       },
     ],
+    forWhomIntro: 'Überall dort, wo Anrufe die Brücke zum Kunden sind — und jeder verpasste Anruf ein verpasster Auftrag.',
     forWhom: [
-      'Zahnarztpraxen',
-      'Physiotherapie',
-      'Handwerksbetriebe',
-      'Friseursalons',
-      'Beratungsbüros',
-      'Fahrschulen',
-      'Tierarztpraxen',
-      'Steuerberater',
+      { label: 'Zahnarztpraxen', desc: 'Anrufe nach Praxisschluss automatisch entgegennehmen und Rückrufbedarf priorisieren.' },
+      { label: 'Physiotherapie', desc: 'Terminanfragen und Absagen rund um die Uhr strukturiert erfassen, ohne Unterbrechung.' },
+      { label: 'Handwerksbetriebe', desc: 'Kundenanfragen und Kostenvoranschläge auch auf der Baustelle nicht mehr verpassen.' },
+      { label: 'Friseursalons', desc: 'Buchungsanfragen und Terminwünsche automatisch entgegennehmen und weiterleiten.' },
+      { label: 'Beratungsbüros', desc: 'Erstanfragen qualifizieren und Kontaktdaten strukturiert erfassen — vor dem ersten Gespräch.' },
+      { label: 'Fahrschulen', desc: 'Rückfragen zu Terminen, Prüfungen und Kursen automatisch beantworten.' },
+      { label: 'Tierarztpraxen', desc: 'Notfallmeldungen sofort erkennen und priorisieren, Routineanfragen selbstständig bearbeiten.' },
+      { label: 'Steuerberater', desc: 'Mandantenanliegen geordnet erfassen — ohne Unterbrechungen im laufenden Arbeitsbetrieb.' },
     ],
     szenario: {
       title: 'Frau Weber ruft um 22:47 Uhr an.',
@@ -183,15 +190,16 @@ Wir beginnen mit einer Prozessanalyse: Was läuft heute manuell? Wo entsteht Rei
         body: 'Nach dem Go-Live dokumentieren wir alles verständlich und übergeben. Die Monatspauschale sichert Betrieb, Monitoring und Anpassungen bei Änderungen.',
       },
     ],
+    forWhomIntro: 'Für alle Betriebe, die täglich mit wiederkehrenden Datenprozessen arbeiten und manuelle Schritte endlich eliminieren wollen.',
     forWhom: [
-      'Versicherungsbüros',
-      'Praxisverwaltungen',
-      'Handwerksbetriebe',
-      'Immobilienbüros',
-      'Steuerberatungen',
-      'Logistikbetriebe',
-      'Bildungseinrichtungen',
-      'E-Commerce-Betreiber',
+      { label: 'Versicherungsbüros', desc: 'Schadenmeldungen und Formulareinreichungen vollautomatisch erfassen und weiterverarbeiten.' },
+      { label: 'Praxisverwaltungen', desc: 'Patientendaten und Abrechnungen ohne manuelle Zwischenschritte an die richtigen Stellen weitergeben.' },
+      { label: 'Handwerksbetriebe', desc: 'Auftragsabwicklung vom Eingang bis zur Rechnung lückenlos automatisieren.' },
+      { label: 'Immobilienbüros', desc: 'Anfragen, Besichtigungstermine und Vertragsunterlagen nahtlos koordinieren und dokumentieren.' },
+      { label: 'Steuerberatungen', desc: 'Belegerfassung und Mandantenkommunikation strukturiert und sicher automatisieren.' },
+      { label: 'Logistikbetriebe', desc: 'Lieferstatus, Bestelldaten und Lagerbestände in Echtzeit automatisch synchronisieren.' },
+      { label: 'Bildungseinrichtungen', desc: 'Anmeldungen, Kursunterlagen und Teilnehmerbenachrichtigungen automatisch verwalten.' },
+      { label: 'E-Commerce-Betreiber', desc: 'Bestellungen, Retouren und Kundenkommunikation ohne Handarbeit reibungslos abwickeln.' },
     ],
     szenario: {
       title: 'Eine Schadenmeldung. Kein manueller Aufwand.',
