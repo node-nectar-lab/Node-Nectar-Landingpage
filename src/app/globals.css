@@ -356,6 +356,35 @@ section.no-rule { border-top: none; }
 }
 .nav .cta:hover { background: var(--cesa-ink-soft); text-decoration: none; }
 
+/* Nav dropdown */
+.nav-dropdown { position: relative; display: flex; align-items: center; }
+.nav-dropdown-menu {
+  display: none;
+  position: absolute; top: calc(100% + 16px); left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  list-style: none;
+  padding: 6px 0;
+  min-width: 210px;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu li a {
+  display: block;
+  padding: 9px 18px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background var(--dur-fast) var(--ease-standard);
+}
+.nav-dropdown-menu li a:hover { background: var(--cesa-fog); text-decoration: none; }
+
 /* ============================================================
    HERO
    ============================================================ */
@@ -1204,6 +1233,7 @@ section.no-rule { border-top: none; }
   .process { grid-template-columns: 1fr; }
   .step { min-height: auto; border-right: none; border-bottom: 1px solid var(--border); }
   .nav a:not(.cta) { display: none; }
+  .nav-dropdown { display: none; }
   .amort-pkg-row { grid-template-columns: 1fr 1fr; }
   .amort-result { grid-template-columns: 1fr; }
   .roi-tab { padding-left: var(--sp-4); padding-right: var(--sp-4); }

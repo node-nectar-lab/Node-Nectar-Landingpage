@@ -10,7 +10,13 @@ export default function Header() {
         <nav className="nav">
           <a href="#module">Module</a>
           <a href="#rechner">Rechner</a>
-          <a href="#pakete">Pakete</a>
+          <div className="nav-dropdown">
+            <a href="/#pakete">Pakete</a>
+            <ul className="nav-dropdown-menu">
+              <li><a href="/pakete/digitale-rezeption">Digitale Rezeption</a></li>
+              <li><a href="/pakete/workflow-automation">Workflow-Automation</a></li>
+            </ul>
+          </div>
           <a href="#referenzen">Referenzen</a>
           <a href="#blog">Journal</a>
           <a href="#kontakt" className="cta">Erstgespräch</a>
