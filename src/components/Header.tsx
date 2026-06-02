@@ -1,6 +1,28 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+
 export default function Header() {
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY < 80) {
+        setHidden(false);
+      } else {
+        setHidden(currentY > lastY.current);
+      }
+      lastY.current = currentY;
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <header className="site-header">
+    <header className={`site-header${hidden ? ' header-hidden' : ''}`}>
       <div className="container inner">
         <a href="#top" className="brand" aria-label="NodeNectar">
           <span className="wordmark">NodeNectar</span>

@@ -302,7 +302,10 @@ section.no-rule { border-top: none; }
   background: var(--bg);
   border-bottom: 1px solid var(--border);
   height: 68px;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
 }
+.site-header.header-hidden { transform: translateY(-100%); }
 .site-header .inner {
   display: flex; align-items: center; justify-content: space-between;
   height: 100%;
