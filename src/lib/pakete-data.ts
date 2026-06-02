@@ -146,7 +146,7 @@ Der Assistent ist in unter einer Woche eingerichtet, klingt natürlich, nicht ro
     desc: 'Für Büros, die ihre Wiederholungsarbeit endlich loswerden wollen.',
     price: 'ab 2.500 €',
     each: 'einmalig · ab 49 €/Monat · zzgl. MwSt.',
-    heroImage: 'https://picsum.photos/seed/workflow-laptop-desk/1400/520',
+    heroImage: 'https://images.unsplash.com/photo-1542744094-24638eff58bb?w=1400&h=520&fit=crop&auto=format',
     features: [
       'Prozessanalyse zu Beginn',
       'Individuelle n8n-Workflows',
