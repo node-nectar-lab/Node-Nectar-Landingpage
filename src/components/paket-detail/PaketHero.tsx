@@ -5,6 +5,16 @@ type Props = { paket: Paket };
 export default function PaketHero({ paket }: Props) {
   return (
     <section className="pd-hero">
+      {paket.heroImage && (
+        <img
+          className="pd-hero-bg"
+          src={paket.heroImage}
+          alt=""
+          aria-hidden="true"
+        />
+      )}
+      <div className="pd-hero-overlay" aria-hidden="true" />
+
       <div className="container">
         <nav className="pd-breadcrumb" aria-label="Breadcrumb">
           <a href="/#pakete">← Alle Pakete</a>
