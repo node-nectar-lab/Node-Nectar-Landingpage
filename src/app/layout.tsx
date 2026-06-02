@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import MobileFloatingCTA from "@/components/MobileFloatingCTA";
 
 export const metadata: Metadata = {
   title: "NodeNectar — Digitale Werkzeuge für Handwerk und lokales Gewerbe",
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body>{children}</body>
+      <body>
+        {children}
+        <MobileFloatingCTA />
+      </body>
     </html>
   );
 }
