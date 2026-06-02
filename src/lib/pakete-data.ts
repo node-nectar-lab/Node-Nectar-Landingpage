@@ -60,7 +60,7 @@ export const pakete: Paket[] = [
     desc: 'Kein Anruf geht verloren. Ihr KI-Assistent ist rund um die Uhr erreichbar.',
     price: '390 €',
     each: 'einmalig · 49 €/Monat · zzgl. MwSt.',
-    heroImage: 'https://picsum.photos/seed/phone-reception-office/1400/520',
+    heroImage: 'https://images.unsplash.com/photo-1742459785723-667110cf8326?w=1400&h=520&fit=crop&auto=format',
     features: [
       '24/7 erreichbar',
       'Nimmt Anliegen vollständig auf',
