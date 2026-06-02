@@ -6,6 +6,27 @@ export default function PaketPreisCTA({ paket }: Props) {
   return (
     <section className="pd-cta" id="anfragen">
       <div className="container">
+
+        {(paket.ctaHeadline || paket.ctaNote) && (
+          <div className="pd-cta-top">
+            {paket.ctaHeadline && <h2 className="pd-cta-headline">{paket.ctaHeadline}</h2>}
+            {paket.ctaNote && <p className="pd-cta-note">{paket.ctaNote}</p>}
+          </div>
+        )}
+
+        {paket.ctaStats && (
+          <ul className="pd-cta-stats" aria-label="Kennzahlen">
+            {paket.ctaStats.map((s) => (
+              <li key={s.label} className="pd-cta-stat">
+                <span className="pd-cta-stat-value">{s.value}</span>
+                <span className="pd-cta-stat-label">{s.label}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <div className="pd-cta-divider" />
+
         <div className="pd-cta-inner">
           <div>
             <p className="pd-cta-price-label">Investition</p>
@@ -26,6 +47,7 @@ export default function PaketPreisCTA({ paket }: Props) {
             </a>
           </div>
         </div>
+
       </div>
     </section>
   );

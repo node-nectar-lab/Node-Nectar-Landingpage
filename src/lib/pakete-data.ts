@@ -20,6 +20,11 @@ export type ForWhomItem = {
   desc: string;
 };
 
+export type CtaStat = {
+  value: string;
+  label: string;
+};
+
 export type Paket = {
   slug: string | null;
   spur: string;
@@ -38,6 +43,9 @@ export type Paket = {
   forWhomIntro?: string;
   szenario?: Szenario;
   faq?: FaqItem[];
+  ctaHeadline?: string;
+  ctaNote?: string;
+  ctaStats?: CtaStat[];
 };
 
 export const pakete: Paket[] = [
@@ -145,6 +153,13 @@ Der Assistent ist in unter einer Woche eingerichtet, klingt natürlich, nicht ro
         a: 'Monatlich kündbar nach dem ersten Monat. Kein Jahresvertrag, keine Mindestlaufzeit.',
       },
     ],
+    ctaHeadline: 'Was diese Investition wirklich wert ist.',
+    ctaNote: 'Ein typischer Handwerks- oder Dienstleistungsbetrieb verpasst täglich 3–7 Anrufe außerhalb der Öffnungszeiten. Bei einem durchschnittlichen Auftragswert von 300 € sind das bis zu 2.100 € potenzieller Umsatz — pro Tag, der unsichtbar liegenbleibt. Die Digitale Rezeption schließt diese Lücke vollständig: rund um die Uhr, ohne Personal, ohne Mehraufwand. Die Einrichtungsgebühr amortisiert sich bei den meisten Betrieben innerhalb von zwei bis drei Wochen.',
+    ctaStats: [
+      { value: '85 %', label: 'weniger verpasste Anrufe im Schnitt' },
+      { value: '2–3 Wo.', label: 'typische Amortisationszeit' },
+      { value: '24 / 7', label: 'Erreichbarkeit ohne Personal' },
+    ],
   },
   {
     slug: 'workflow-automation',
@@ -231,6 +246,13 @@ Wir beginnen mit einer Prozessanalyse: Was läuft heute manuell? Wo entsteht Rei
         q: 'Lässt sich das mit der Digitalen Rezeption kombinieren?',
         a: 'Ja, ausdrücklich. Paket 02 (Digitale Rezeption) und Paket 03 (Workflow-Automation) ergänzen sich: Eingehende Anruf-Zusammenfassungen können direkt in Ihren CRM-Workflow fließen.',
       },
+    ],
+    ctaHeadline: 'Verborgenes Potenzial — sichtbar gemacht.',
+    ctaNote: 'Manuelle Datenprozesse kosten im Schnitt 6–8 Arbeitsstunden pro Woche — oft jahrelang unbemerkt. Bei einem internen Stundensatz von 40 € sind das über 15.000 € Personalaufwand pro Jahr für Aufgaben, die vollständig automatisierbar sind. Hinzu kommt das Fehlerrisiko: Jede manuelle Übertragung ist ein potenzieller Fehler. Workflow-Automation beseitigt beides — und skaliert ohne Mehrkosten mit, wenn Ihr Betrieb wächst.',
+    ctaStats: [
+      { value: '6–8 h', label: 'Zeitersparnis pro Woche im Schnitt' },
+      { value: '< 3 Sek.', label: 'statt 15 Min. pro manuellem Vorgang' },
+      { value: '0 €', label: 'Mehrkosten beim Skalieren' },
     ],
   },
   {
