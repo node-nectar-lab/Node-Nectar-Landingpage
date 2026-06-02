@@ -20,7 +20,7 @@ export default function PaketProcess({ steps }: Props) {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
     items.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
@@ -28,17 +28,27 @@ export default function PaketProcess({ steps }: Props) {
 
   return (
     <section className="pd-process">
-      <div className="container">
+      <div className="container-narrow">
         <p className="pd-process-label">Ablauf</p>
         <h2>So funktioniert es.</h2>
         <div className="pd-steps" ref={stepsRef}>
-          {steps.map((step) => (
-            <div key={step.nr} className="pd-step pd-reveal">
-              <div className="pd-step-nr">{step.nr}</div>
-              <div className="pd-step-title">{step.title}</div>
-              <p className="pd-step-body">{step.body}</p>
-            </div>
-          ))}
+          {steps.map((step, i) => {
+            const isLast = i === steps.length - 1;
+            return (
+              <div key={step.nr} className="pd-step pd-reveal">
+                <div className="pd-step-left">
+                  <div className={`pd-step-circle${isLast ? ' last' : ''}`}>
+                    {step.nr}
+                  </div>
+                  {!isLast && <div className="pd-step-line" />}
+                </div>
+                <div className="pd-step-right">
+                  <div className="pd-step-title">{step.title}</div>
+                  <p className="pd-step-body">{step.body}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
