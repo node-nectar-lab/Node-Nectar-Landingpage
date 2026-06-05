@@ -1136,9 +1136,11 @@ section.no-rule { border-top: none; }
    ============================================================ */
 .cases {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-7);
+  align-items: stretch;
 }
 .case {
   display: flex; flex-direction: column; gap: var(--sp-5);
+  height: 100%;
   color: inherit; border-bottom: 1px solid var(--cesa-ink); padding-bottom: var(--sp-6);
 }
 .case-img {
@@ -1158,17 +1160,18 @@ section.no-rule { border-top: none; }
 .case-meta { font-size: var(--fs-xs); letter-spacing: 0.22em; text-transform: uppercase; color: var(--fg-muted); }
 .case-title { font-size: var(--fs-md); font-weight: 700; letter-spacing: -0.005em; line-height: 1.3; }
 .case-line { font-size: var(--fs-sm); color: var(--fg-muted); line-height: 1.5; }
-.case > div:last-child { display: flex; flex-direction: column; flex: 1; }
+.case > div:last-child { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.case-line { flex-shrink: 0; }
 .case-stats {
   display: grid; grid-template-columns: 1fr 1fr 1fr;
-  align-items: start;
+  align-items: stretch;
   margin-top: auto; padding-top: var(--sp-5); border-top: 1px solid var(--border);
 }
 .case-stats .s { display: flex; flex-direction: column; gap: 4px; padding: 0 var(--sp-4) 0 0; border-right: 1px solid var(--border); }
 .case-stats .s:last-child { border-right: none; padding-right: 0; padding-left: var(--sp-4); }
 .case-stats .s:nth-child(2) { padding-left: var(--sp-4); }
 .case-stats .sv { font-size: 20px; font-weight: 500; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
-.case-stats .sk { font-size: var(--fs-xs); letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-muted); min-height: 2.6em; line-height: 1.3; }
+.case-stats .sk { font-size: var(--fs-xs); letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-muted); line-height: 1.3; }
 
 /* ============================================================
    ERGEBNIS
