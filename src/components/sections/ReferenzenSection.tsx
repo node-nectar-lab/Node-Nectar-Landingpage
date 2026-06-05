@@ -6,7 +6,7 @@ const cases = [
     title: 'Mustermann Sanitär & Heizung',
     line: 'Altes Wix-Setup, drei Notfall-Anrufe pro Woche unbeantwortet. Komplett-Paket inkl. Telefon-Annahme in fünf Werktagen ausgerollt.',
     stats: [
-      { v: '+11', k: 'Strukt. Anfragen / Woche' },
+      { v: '+11', k: 'Anfragen / Woche' },
       { v: '5 d', k: 'Lieferzeit' },
       { v: 'P03', k: 'Rezeption Plus' },
     ],

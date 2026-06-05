@@ -44,8 +44,6 @@ export default function Header() {
                 <li><a href="/pakete/workflow-automation">Workflow-Automation</a></li>
               </ul>
             </div>
-            <a href="#referenzen">Referenzen</a>
-            <a href="#blog">Journal</a>
             <a href="#kontakt" className="cta">Erstgespräch</a>
           </nav>
           <button
@@ -71,8 +69,6 @@ export default function Header() {
           <a href="/#pakete" onClick={close}>Pakete</a>
           <a href="/pakete/digitale-rezeption" onClick={close} className="mobile-nav-sub">↳ Digitale Rezeption</a>
           <a href="/pakete/workflow-automation" onClick={close} className="mobile-nav-sub">↳ Workflow-Automation</a>
-          <a href="/#referenzen" onClick={close}>Referenzen</a>
-          <a href="/#blog" onClick={close}>Journal</a>
           <a href="/#kontakt" onClick={close} className="mobile-nav-cta">Erstgespräch anfragen</a>
         </nav>
       </div>

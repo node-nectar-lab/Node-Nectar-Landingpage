@@ -12,7 +12,6 @@ import ProzessSection from '@/components/sections/ProzessSection';
 import ReferenzenSection from '@/components/sections/ReferenzenSection';
 import ErgebnisSection from '@/components/sections/ErgebnisSection';
 import EinwaendeSection from '@/components/sections/EinwaendeSection';
-import BlogSection from '@/components/sections/BlogSection';
 import KontaktSection from '@/components/sections/KontaktSection';
 import FAQSection from '@/components/sections/FAQSection';
 
@@ -33,7 +32,6 @@ export default function Home() {
         <ReferenzenSection />
         <ErgebnisSection />
         <EinwaendeSection />
-        <BlogSection />
         <KontaktSection />
         <FAQSection />
       </main>

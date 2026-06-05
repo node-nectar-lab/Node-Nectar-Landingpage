@@ -51,7 +51,7 @@ export type Paket = {
 export const pakete: Paket[] = [
   {
     slug: null,
-    spur: 'Empfang',
+    spur: 'Web-Präsenz',
     name: 'Website Launch',
     desc: 'Für Betriebe mit alter oder fehlender Website. Nur das Fundament.',
     price: '790 €',
