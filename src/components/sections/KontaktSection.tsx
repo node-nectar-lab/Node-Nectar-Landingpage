@@ -4,6 +4,8 @@ import { useState } from 'react';
 
 export default function KontaktSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   return (
     <section id="kontakt" className="form-section">
@@ -17,7 +19,7 @@ export default function KontaktSection() {
           <div className="form-aside">
             <div className="form-aside-item">
               <div className="k">Telefonisch</div>
-              <div className="v big">+49 (0) 30 120&thinsp;480&thinsp;90</div>
+              <div className="v big">+49 1732765015</div>
             </div>
             <div className="form-aside-item">
               <div className="k">Erreichbarkeit</div>
@@ -25,15 +27,11 @@ export default function KontaktSection() {
             </div>
             <div className="form-aside-item">
               <div className="k">E-Mail</div>
-              <div className="v">hallo@nodenectar.de</div>
+              <div className="v">info@nodenectar.de</div>
             </div>
             <div className="form-aside-item">
               <div className="k">Bearbeitungszeit</div>
               <div className="v">Antwort innerhalb eines Werktags.</div>
-            </div>
-            <div className="form-aside-item">
-              <div className="k">Kapazität</div>
-              <div className="v">Maximal drei aktive Projekte gleichzeitig – bei Überlast kommunizieren wir eine Warteliste, statt das Versprechen zu brechen.</div>
             </div>
           </div>
 
@@ -47,7 +45,40 @@ export default function KontaktSection() {
           ) : (
             <form
               className="form-fields"
-              onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}
+              onSubmit={async (e) => {
+                e.preventDefault();
+                setLoading(true);
+                setError('');
+                const fd = new FormData(e.currentTarget);
+                const payload = {
+                  name: fd.get('name'),
+                  firma: fd.get('firma'),
+                  branche: fd.get('branche'),
+                  telefon: fd.get('telefon'),
+                  email: fd.get('email'),
+                  website: fd.get('website'),
+                  probleme: fd.getAll('problem'),
+                  missedCalls: fd.get('missed-calls'),
+                  paket: fd.get('paket'),
+                  anmerkung: fd.get('anmerkung'),
+                };
+                try {
+                  const res = await fetch('/api/kontakt', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                  });
+                  if (res.ok) {
+                    setSubmitted(true);
+                  } else {
+                    setError('Fehler beim Senden. Bitte versuche es erneut oder schreib uns direkt.');
+                  }
+                } catch {
+                  setError('Netzwerkfehler. Bitte versuche es erneut.');
+                } finally {
+                  setLoading(false);
+                }
+              }}
               noValidate
             >
               <div className="field">
@@ -123,9 +154,14 @@ export default function KontaktSection() {
                   <span>Ich habe die <a href="datenschutz.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme zu. <span className="req">*</span></span>
                 </label>
               </div>
+              {error && (
+                <div className="full" style={{ color: '#e55', fontSize: 'var(--fs-sm)', marginBottom: 'var(--sp-2)' }}>{error}</div>
+              )}
               <div className="form-submit full">
                 <span className="consent">Keine automatische Antwort – ein Mensch liest mit.</span>
-                <button type="submit" className="btn btn-primary">Kostenlose Ersteinschätzung anfragen <span className="arr">→</span></button>
+                <button type="submit" className="btn btn-primary" disabled={loading}>
+                  {loading ? 'Wird gesendet…' : <>Kostenlose Ersteinschätzung anfragen <span className="arr">→</span></>}
+                </button>
               </div>
             </form>
           )}
