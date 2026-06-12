@@ -1,21 +1,9 @@
 "use client";
 
-import CookieConsent, { getCookieConsentValue, resetCookieConsentValue } from "react-cookie-consent";
+import CookieConsent from "react-cookie-consent";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function CookieBanner() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const val = getCookieConsentValue("nodenectar_cookie_consent");
-    if (val === undefined || val === null) {
-      setVisible(true);
-    }
-  }, []);
-
-  if (!visible) return null;
-
   return (
     <CookieConsent
       cookieName="nodenectar_cookie_consent"
@@ -23,8 +11,6 @@ export default function CookieBanner() {
       buttonText="Alle akzeptieren"
       declineButtonText="Nur notwendige"
       enableDeclineButton
-      onAccept={() => setVisible(false)}
-      onDecline={() => setVisible(false)}
       expires={365}
       style={{
         background: "#1A1816",
