@@ -5,14 +5,8 @@ import { useState, useCallback } from 'react';
 const fmt = (n: number) =>
   new Intl.NumberFormat('de-DE', { maximumFractionDigits: 0 }).format(Math.max(0, Math.round(n)));
 
-type Tab = 'calls' | 'backoffice' | 'amort';
+type Tab = 'calls' | 'backoffice';
 
-const PKGS = [
-  { id: 'p1', name: 'Paket 01', title: 'Website Launch', price: '790 € + 49 €/Mo', once: 790, mo: 49 },
-  { id: 'p2', name: 'Paket 02', title: 'Digitale Rezeption', price: '1.290 € + 79 €/Mo', once: 1290, mo: 79 },
-  { id: 'p3', name: 'Paket 03', title: 'Rezeption Plus', price: '1.890 € + 99 €/Mo', once: 1890, mo: 99 },
-  { id: 'p4', name: 'Paket 04', title: 'Workflow-Automation', price: 'ab 2.500 € + individuell', once: 2500, mo: 150 },
-];
 
 export default function RechnerSection() {
   const [tab, setTab] = useState<Tab>('calls');
@@ -27,9 +21,6 @@ export default function RechnerSection() {
   const [boAuto, setBoAuto] = useState(40);
   const [boRate, setBoRate] = useState(60);
 
-  // Tab 3: Amortisation
-  const [selPkg, setSelPkg] = useState(1);
-
   // Berechnungen Tab 1
   const monthly = missed * 4.33 * (close / 100) * order;
   const yearly = monthly * 12;
@@ -37,14 +28,6 @@ export default function RechnerSection() {
   // Berechnungen Tab 2
   const hSaved = boHours * (boAuto / 100) * 4.33;
   const savings = hSaved * boRate;
-
-  // Berechnungen Tab 3
-  const pkg = PKGS[selPkg];
-  const totalY1 = pkg.once + pkg.mo * 12;
-  const monthlyNeeded = totalY1 / 12;
-  const callsNeeded = monthlyNeeded / ((close / 100) * order);
-  const hoursNeeded = monthlyNeeded / boRate;
-  const callsRounded = Math.ceil(callsNeeded);
 
   const FlashNum = useCallback(({ value }: { value: string }) => (
     <span className="num-update">{value}</span>
@@ -60,13 +43,13 @@ export default function RechnerSection() {
         </div>
 
         <div className="roi-tabs">
-          {(['calls', 'backoffice', 'amort'] as Tab[]).map((t) => (
+          {(['calls', 'backoffice'] as Tab[]).map((t) => (
             <button
               key={t}
               className={`roi-tab${tab === t ? ' active' : ''}`}
               onClick={() => setTab(t)}
             >
-              {t === 'calls' ? 'Verpasste Anrufe' : t === 'backoffice' ? 'Backoffice-Automation' : 'Amortisation'}
+              {t === 'calls' ? 'Verpasste Anrufe' : 'Backoffice-Automation'}
             </button>
           ))}
         </div>
@@ -131,48 +114,6 @@ export default function RechnerSection() {
             <div className="yearly">
               <span className="k">Hochgerechnet auf 12 Monate</span>
               <span className="v"><FlashNum value={fmt(savings * 12)} />&thinsp;€</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Tab 3: Amortisation */}
-        <div className={`roi-panel${tab === 'amort' ? ' active' : ''}`} style={{ gridTemplateColumns: '1fr' }}>
-          <div>
-            <div style={{ fontSize: '11px', fontWeight: 500, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--fg-muted)', marginBottom: 'var(--sp-5)' }}>Paket auswählen</div>
-            <div className="amort-pkg-row">
-              {PKGS.map((p, i) => (
-                <button
-                  key={p.id}
-                  className={`amort-pkg${selPkg === i ? ' sel' : ''}`}
-                  onClick={() => setSelPkg(i)}
-                >
-                  <div className="apn">{p.name}</div>
-                  <div className="apt">{p.title}</div>
-                  <div className="app">{p.price}</div>
-                </button>
-              ))}
-            </div>
-            <div className="amort-result">
-              <div className="amort-stat">
-                <div className="as-l">Gesamtkosten Jahr 1</div>
-                <div className="as-v">{fmt(totalY1)}&thinsp;€</div>
-                <div className="as-s">Einmalig + 12 × Monatspauschale</div>
-              </div>
-              <div className="amort-stat">
-                <div className="as-l">Monatlich benötigt (Ø)</div>
-                <div className="as-v">{fmt(monthlyNeeded)}&thinsp;€</div>
-                <div className="as-s">Mehreinnahme zum Break-even</div>
-              </div>
-              <div className="amort-stat">
-                <div className="as-l">Break-even Anrufe</div>
-                <div className="as-v">{callsNeeded < 1 ? '< 1' : fmt(callsRounded)}&thinsp;{callsRounded === 1 ? 'Anruf' : 'Anrufe'}</div>
-                <div className="as-s">Zusätzlich abgeschlossene Aufträge / Monat</div>
-              </div>
-              <div className="amort-stat">
-                <div className="as-l">Break-even Stunden</div>
-                <div className="as-v">{fmt(Math.ceil(hoursNeeded))}&thinsp;h</div>
-                <div className="as-s">Eingesparte Bürostunden genügen</div>
-              </div>
             </div>
           </div>
         </div>
