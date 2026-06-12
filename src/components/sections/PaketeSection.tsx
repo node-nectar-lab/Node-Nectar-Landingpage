@@ -26,16 +26,6 @@ export default function PaketeSection() {
                 <div className="pkg-name">{p.name}</div>
               </div>
               <p className="pkg-for">{p.desc}</p>
-              {p.price !== null ? (
-                <div className="pkg-price-row">
-                  <div className="price">{p.price}</div>
-                  <div className="each">{p.each}</div>
-                </div>
-              ) : (
-                <div className="pkg-price-row">
-                  <div className="price pkg-price-on-request">Auf Anfrage</div>
-                </div>
-              )}
               <ul className="pkg-features">
                 {p.features.map((f) => (
                   <li key={f} className="pkg-feature">{f}</li>
