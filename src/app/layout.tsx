@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import MobileFloatingCTA from "@/components/MobileFloatingCTA";
+import CookieBanner from "@/components/CookieBanner";
 
 export const metadata: Metadata = {
   title: "NodeNectar — Digitale Werkzeuge für Handwerk und lokales Gewerbe",
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body>
         {children}
         <MobileFloatingCTA />
+        <CookieBanner />
       </body>
     </html>
   );
